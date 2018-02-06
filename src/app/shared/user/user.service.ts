@@ -7,7 +7,7 @@ import {User} from '../../_models/user';
 @Injectable()
 export class UserService {
 
-  public API = 'http://localhost:8080';
+  public API = 'http://localhost:8088';
   public CAR_API = this.API + '/user';
 
   constructor(private http: HttpClient, private authenticationService: AuthenticationService) {
@@ -20,7 +20,7 @@ export class UserService {
     };
 
     // get users from api
-    return this.http.get<User[]>('http://localhost:8080/users', httpOptions);
+    return this.http.get<User[]>('http://localhost:8088/users', httpOptions);
   }
 
   get(): Observable<any> {

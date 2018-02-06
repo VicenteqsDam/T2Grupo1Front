@@ -16,7 +16,7 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string): Observable<boolean> {
-    return this.http.post('http://locaLhost:8080/login', JSON.stringify({username: username, password: password}), {observe: 'response'})
+    return this.http.post('http://locaLhost:8088/login', JSON.stringify({username: username, password: password}), {observe: 'response'})
       .map(data => {
         this.token = data.headers.get('Authorization');
         localStorage.setItem('currentUser', JSON.stringify({username: username, token: this.token}));
