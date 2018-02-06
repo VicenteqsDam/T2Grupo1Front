@@ -36,6 +36,12 @@ const appRoutes: Routes = [
   {
     path: '**',
     redirectTo: ''
+	canActivate: [AuthGuard]
+  },
+  {
+	  path: '**',
+	  redirectTo: 'login',
+	  canActivate: [!AuthGuard]
   }
 ];
 
