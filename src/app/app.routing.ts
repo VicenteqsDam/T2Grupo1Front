@@ -35,7 +35,7 @@ const appRoutes: Routes = [
   // otherwise redirect to home
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: '',
 	canActivate: [AuthGuard]
   },
   {
